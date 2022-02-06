@@ -64,7 +64,7 @@ clean-conf:
 	$(MAKE) -C conf clean
 
 .PHONY: install
-install: install-programs install-doc install-conf install-scripts
+install: install-programs install-conf install-scripts
 
 .PHONY: rpm
 rpm:

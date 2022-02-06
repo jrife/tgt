@@ -1,0 +1,14 @@
+version: "3"
+services:
+  target:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.target
+    ports:
+    - "3260:3260"
+  # initiator:
+  #   build:
+  #     context: .
+  #     dockerfile: docker/Dockerfile.initiator
+  #   cap_add:
+  #   - SYS_MODULE

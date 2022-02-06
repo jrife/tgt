@@ -1,0 +1,10 @@
+FROM ubuntu:20.04
+
+RUN apt update
+RUN DEBIAN_FRONTEND=noninteractive apt install -yq build-essential xsltproc
+RUN cpan Config::General
+ADD . /root/tgt
+WORKDIR /root/tgt
+RUN make install
+RUN dd if=/dev/zero of=/root/disk.img  bs=24M  count=1
+ENTRYPOINT ./docker/tgtd.sh
